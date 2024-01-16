@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Initialise React and reactDom -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strike,
+      strong,
+      sub,
+      sup,
+      tt,
+      var,
+      b,
+      u,
+      i,
+      center,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      article,
+      aside,
+      canvas,
+      details,
+      embed,
+      figure,
+      figcaption,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      output,
+      ruby,
+      section,
+      summary,
+      time,
+      mark,
+      audio,
+      video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section {
+        display: block;
+      }
+      body {
+        line-height: 1;
+      }
+      ol,
+      ul {
+        list-style: none;
+      }
+      blockquote,
+      q {
+        quotes: none;
+      }
+      blockquote:before,
+      blockquote:after,
+      q:before,
+      q:after {
+        content: "";
+        content: none;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      .container {
+        background-color: #fff;
+        width: 750px;
+      }
+      body {
+        font-family:sans-serif;
+        background-color: #f2f2f2;
+        padding: 50px 250px;
+      }
+      article {
+        padding: 50px 50px;
+        /* text-align: center; */
+      }
+      h1 {
+        font-size: 55px;
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+      h2 {
+        font-size: 35px;
+        font-weight: 700;
+        color: rgb(173, 32, 32);
+        margin-bottom: 30px;
+      }
+      p {
+        font-size: 30px;
+        color: #706969;
+        margin-bottom: 20px;
+      }
+      .image-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        width: 130px;
+        height: 130px;
+        background-color: rgb(216, 30, 30);
+        border-radius: 50%;
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+      }
+      .olp1{
+        position: absolute;
+        top: 40px;
+        right: 50px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .right{
+        margin-left: 20px;
+      }
+      span{
+        font-size: 20px;
+        color: #706969;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="column"></div>
+
+    <script type="text/babel">
+      let root = document.querySelector(".column");
+
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+
+      let cardInfo = {
+        title: "City Lights in New York",
+        date: new Date("2017-01-26"),
+        comments: 67,
+        subTitle: "The city that never sleeps.",
+        description:
+          "New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.",
+        category: "photos",
+        imageURL:
+          "https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      };
+
+      let ui = (
+        <div className="container">
+          <div className="image-container">
+            <img src={cardInfo.imageURL} alt="Your Image" />
+            <div className="overlay">
+              <div className="olp1">
+                <div>{cardInfo.date.getDate()}</div>
+                <div>{months[cardInfo.date.getMonth()].slice(0, 3)}</div>
+            </div>
+            </div>
+          </div>
+          <article>
+            <h1>{cardInfo.title}</h1>
+            <h2>{cardInfo.subTitle}</h2>
+            <p>{cardInfo.description}</p>
+            <span> ~ 6 Min Ago</span>
+            <span className="right"> 🚀 39 Comments</span>
+          </article>
+        </div>
+      );
+
+      ReactDOM.render(ui, root);
+    </script>
+  </body>
+</html>
