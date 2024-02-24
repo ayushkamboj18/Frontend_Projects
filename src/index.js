@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Books from "./components/Books";
 import Peoples from "./components/Peoples";
 import Articles from "./components/Articles";
+import Article from "./components/Article";
 import Help from "./components/Help";
 
 import "./style.css"
@@ -33,11 +34,15 @@ const appRouter = createBrowserRouter([
             },
             {
                 path : "/articles",
-                element : <Articles/>
+                element : <Articles/>,
             },
             {
                 path : "/help",
                 element : <Help/>
+            },
+            {
+                path : "articles/:slug",
+                element : <Article/>
             },
             
         ]
