@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <>
+    <div className="margin">
       <h1>🚀 Welcome to Homepage!</h1>
       <ul className="people">
         {["articles", "books", "people"].map((path,index) => {
@@ -17,7 +17,7 @@ function Home() {
           );
         })}
       </ul>
-    </>
+    </div>
   );
 }
 

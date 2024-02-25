@@ -8,7 +8,7 @@ function App() {
             <Header/>
             <div className="flex">
                 <Sidebar/>
-                <div>
+                <div  className="flex1">
                     <Outlet/>
                 </div>
             </div>

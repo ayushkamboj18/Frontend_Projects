@@ -1,7 +1,5 @@
-const Help = ()=>{
-    return(
-      <h1>Nothing is here !</h1>
-    )
-  }
-  
-  export default Help;
+function Help() {
+  return <h1>🤷‍♀️ How can we help you?</h1>;
+}
+
+export default Help;
